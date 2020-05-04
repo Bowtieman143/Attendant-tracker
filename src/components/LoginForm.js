@@ -34,7 +34,7 @@ class LoginForm extends React.Component {
       .then(response => {
         window.localStorage.setItem("isAuthenticated", true)
         window.localStorage.setItem("jwt", response.data.jwt)
-        window.location.href = "/portal"
+        window.location.href = this.props.desiredRoute
       })
       .catch(error => {
         alert(error)

@@ -2,13 +2,13 @@ import React from "react"
 import LoginForm from "../components/LoginForm"
 
 import Layout from "../components/Layout"
-import SEO from "../components/seo"
+import SEO from "../components/SEO"
 
 const IndexPage = props => {
   return (
     <Layout>
       <SEO title="Home" />
-      <LoginForm />
+      This is the homepage
     </Layout>
   )
 }
