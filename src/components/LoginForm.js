@@ -1,4 +1,5 @@
 import React, { Fragment } from "react"
+import { navigate } from "gatsby"
 import Form from "react-bootstrap/Form"
 import Button from "react-bootstrap/Button"
 import axios from "axios"
@@ -34,12 +35,12 @@ class LoginForm extends React.Component {
       .then(response => {
         window.localStorage.setItem("isAuthenticated", true)
         window.localStorage.setItem("jwt", response.data.jwt)
-        window.location.href = this.props.desiredRoute
+        navigate("/portal/profile")
+        this.setState({ username: "", password: "" })
       })
       .catch(error => {
         alert(error)
       })
-    this.setState({ username: "", password: "" })
   }
 
   render() {

@@ -1,34 +1,16 @@
 import React, { Fragment } from "react"
-import Layout from "../components/Layout"
-import SEO from "../components/SEO"
-import axios from "axios"
+import { Router } from "@reach/router"
+import Profile from "../private-pages/Profile"
+import Login from "../private-pages/Login"
+import PrivateRoute from "../components/PrivateRoute"
 
-// const getAllAttendants = () => {
-//   axios
-//     .get("http://localhost:1337/attendants", {
-//       headers: {
-//         Authorization: `Bearer ${JSON.parse(localStorage.getItem("jwt"))}`,
-//       },
-//     })
-//     .then(res => {
-//       console.log(res.data)
-//       return res
-//     })
-//     .catch(err => {
-//       return err
-//     })
-// }
-
-const SecondPage = () => {
+const Portal = () => {
   return (
-    <Layout>
-      <Fragment>
-        <SEO title="Page two" />
-        <h1>Hi from the second page</h1>
-        <p>Welcome to page 2</p>
-      </Fragment>
-    </Layout>
+    <Router basepath="/portal">
+      <PrivateRoute path="/profile" component={Profile} />
+      <Login path="/login" />
+    </Router>
   )
 }
 
-export default SecondPage
+export default Portal
