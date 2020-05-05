@@ -1,25 +1,32 @@
 import React, { Fragment } from "react"
-import { Link } from "gatsby"
-
 import Layout from "../components/Layout"
 import SEO from "../components/SEO"
+import axios from "axios"
+
+// const getAllAttendants = () => {
+//   axios
+//     .get("http://localhost:1337/attendants", {
+//       headers: {
+//         Authorization: `Bearer ${JSON.parse(localStorage.getItem("jwt"))}`,
+//       },
+//     })
+//     .then(res => {
+//       console.log(res.data)
+//       return res
+//     })
+//     .catch(err => {
+//       return err
+//     })
+// }
 
 const SecondPage = () => {
-  const isAuthenticated = JSON.parse(localStorage.getItem("isAuthenticated"))
-
   return (
     <Layout>
-      {isAuthenticated ? (
-        <Fragment>
-          <SEO title="Page two" />
-          <h1>Hi from the second page</h1>
-          <p>Welcome to page 2</p>
-          <Link to="/">Go back to the homepage</Link>
-        </Fragment>
-      ) : (
-        <h2>Please log in</h2>
-      )}
-      Thanks for comming
+      <Fragment>
+        <SEO title="Page two" />
+        <h1>Hi from the second page</h1>
+        <p>Welcome to page 2</p>
+      </Fragment>
     </Layout>
   )
 }

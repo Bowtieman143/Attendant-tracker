@@ -1,26 +1,31 @@
-import React from "react"
+import React, { Fragment, useState } from "react"
 import Form from "react-bootstrap/Form"
 import Button from "react-bootstrap/Button"
-
-const handleSubmit = successRoute => {
-  window.localStorage.setItem("isAuthenticated", false)
-  window.localStorage.setItem("jwt", "")
-  window.location.href = "/"
-}
+import Spinner from "react-bootstrap/Spinner"
 
 const LogoutForm = props => {
+  const [loading, setLoading] = useState(false)
   return (
-    <Form
-      onSubmit={event => {
-        event.preventDefault()
-        handleSubmit(props.successRoute)
-      }}
-    >
-      <h2>Hello</h2>
-      <Button variant="primary" type="submit">
-        Submit
-      </Button>
-    </Form>
+    <Fragment>
+      {loading ? (
+        <Spinner animation="border" />
+      ) : (
+        <Form
+          onSubmit={event => {
+            event.preventDefault()
+            setLoading(true)
+            window.localStorage.setItem("isAuthenticated", false)
+            window.localStorage.setItem("jwt", "")
+            window.location.href = "/"
+          }}
+        >
+          <h2>Hello</h2>
+          <Button variant="primary" type="submit">
+            Submit
+          </Button>
+        </Form>
+      )}
+    </Fragment>
   )
 }
 
