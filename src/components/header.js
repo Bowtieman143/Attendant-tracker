@@ -38,7 +38,7 @@ const Header = () => {
         <Modal.Header closeButton></Modal.Header>
         <Modal.Body>
           {isAuthenticated === true ? (
-            <LogoutForm />
+            <LogoutForm successRedirect="/" />
           ) : (
             <LoginForm desiredRoute="/portal" />
           )}
