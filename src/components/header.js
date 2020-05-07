@@ -1,4 +1,3 @@
-import { Link } from "gatsby"
 import React, { Fragment, useState } from "react"
 import Nav from "react-bootstrap/Nav"
 import Navbar from "react-bootstrap/Navbar"
@@ -19,7 +18,7 @@ const Header = () => {
 
   return (
     <Fragment>
-      <Navbar className="mb-4" variant="dark" bg="dark" expand="lg">
+      <Navbar className="m-0" variant="dark" bg="dark" expand="lg">
         <Container>
           <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
