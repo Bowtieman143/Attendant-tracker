@@ -8,7 +8,7 @@ const IndexPage = props => {
   return (
     <Layout>
       <SEO title="Home" />
-      This is the homepage
+      This is the homepage now
     </Layout>
   )
 }
