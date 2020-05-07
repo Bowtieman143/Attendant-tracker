@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react"
+import React, { Fragment, useState, useEffect } from "react"
 import Nav from "react-bootstrap/Nav"
 import Navbar from "react-bootstrap/Navbar"
 import Modal from "react-bootstrap/Modal"
@@ -11,10 +11,13 @@ import "./Header.css"
 
 const Header = () => {
   const [show, setShow] = useState(false)
+  const [isAuthenticated, setIsAuthenticated] = useState("")
 
   const handleClose = () => setShow(false)
   const handleShow = () => setShow(true)
-  const isAuthenticated = JSON.parse(localStorage.getItem("isAuthenticated"))
+  useEffect(() => {
+    setIsAuthenticated(JSON.parse(localStorage.getItem("isAuthenticated")))
+  }, [])
 
   return (
     <Fragment>
