@@ -5,10 +5,10 @@ import Navbar from "react-bootstrap/Navbar"
 import Modal from "react-bootstrap/Modal"
 import Container from "react-bootstrap/Container"
 
-import LoginForm from "./LoginForm"
-import LogoutForm from "./LogoutForm"
+import LoginForm from "../LoginForm"
+import LogoutForm from "../LogoutForm"
 
-import "./Header.css"
+import "./index.css"
 
 const Header = () => {
   const [show, setShow] = useState(false)
