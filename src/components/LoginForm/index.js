@@ -7,26 +7,6 @@ import { isLoggedIn, handleLogin } from "../../services/auth"
 
 const handleSubmit = (username, password) => {
   return handleLogin({ username, password })
-<<<<<<< HEAD
-
-  // const data = {
-  //   identifier: username,
-  //   password,
-  // }
-
-  // axios
-  //   .post("https://attendant-tracker-con.herokuapp.com/auth/local", data)
-  //   .then(response => {
-  //     console.log(response.data.user)
-  //     window.localStorage.setItem("user", JSON.stringify(response.data.user))
-  //     window.localStorage.setItem("isAuthenticated", true)
-  //     window.localStorage.setItem("jwt", response.data.jwt)
-  //     navigate("/portal/profile")
-  //   })
-  //   .catch(error => {
-  //     alert(error)
-  //     navigate("/portal/login")
-  //   })
 }
 
 const LoginForm = () => {
@@ -37,18 +17,6 @@ const LoginForm = () => {
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
 
-=======
-}
-
-const LoginForm = () => {
-  if (isLoggedIn()) {
-    navigate(`/portal/profile`)
-  }
-
-  const [username, setUsername] = useState("")
-  const [password, setPassword] = useState("")
-
->>>>>>> a721c168367d9179162b0f6c86eef643c37ad193
   return (
     <Fragment>
       <h2>Login</h2>

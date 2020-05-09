@@ -18,7 +18,7 @@ import axios from "axios"
 //   const data = { username, email }
 // This is causing an issur
 //   axios
-//     .put(`https://sad-panini-3db68b.netlify.app//users/${id}`, data, {
+//     .put(`https://attendant-tracker-con.herokuapp.com/users/${id}`, data, {
 //       headers: {
 //         Authorization: `Bearer ${token}`,
 //       },
