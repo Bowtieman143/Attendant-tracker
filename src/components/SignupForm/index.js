@@ -7,7 +7,7 @@ import axios from "axios"
 const handleSubmit = (username, email, password, setLoading) => {
   setLoading(true)
   axios
-    .post("http://localhost:1337/auth/local/register", {
+    .post("https://attendant-tracker-con.herokuapp.com/auth/local/register", {
       username,
       email,
       password,

@@ -6,18 +6,15 @@ import Container from "react-bootstrap/Container"
 
 import LoginForm from "../LoginForm"
 import LogoutForm from "../LogoutForm"
+import { isLoggedIn } from "../../services/auth"
 
 import "./index.css"
 
 const Header = () => {
   const [show, setShow] = useState(false)
-  const [isAuthenticated, setIsAuthenticated] = useState("")
 
   const handleClose = () => setShow(false)
   const handleShow = () => setShow(true)
-  useEffect(() => {
-    setIsAuthenticated(JSON.parse(localStorage.getItem("isAuthenticated")))
-  }, [])
 
   return (
     <Fragment>
@@ -27,10 +24,10 @@ const Header = () => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ml-auto">
-              {isAuthenticated === true ? (
+              {isLoggedIn() ? (
                 <Nav.Link onClick={handleShow}>Logout</Nav.Link>
               ) : (
-                <Nav.Link onClick={handleShow}>Login</Nav.Link>
+                <Nav.Link href="/portal/login">Login</Nav.Link>
               )}
             </Nav>
           </Navbar.Collapse>
@@ -39,10 +36,10 @@ const Header = () => {
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton></Modal.Header>
         <Modal.Body>
-          {isAuthenticated === true ? (
+          {isLoggedIn() ? (
             <LogoutForm successRedirect="/" />
           ) : (
-            <LoginForm desiredRoute="/portal" />
+            <LoginForm desiredRoute="/portal/profile" />
           )}
         </Modal.Body>
       </Modal>

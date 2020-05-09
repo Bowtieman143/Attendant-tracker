@@ -2,6 +2,8 @@ import React, { Fragment, useState } from "react"
 import Form from "react-bootstrap/Form"
 import Button from "react-bootstrap/Button"
 import Spinner from "react-bootstrap/Spinner"
+import { navigate } from "@reach/router"
+import { logout } from "../../services/auth"
 
 const LogoutForm = props => {
   const [loading, setLoading] = useState(false)
@@ -13,10 +15,9 @@ const LogoutForm = props => {
         <Form
           onSubmit={event => {
             event.preventDefault()
-            setLoading(true)
-            window.localStorage.setItem("isAuthenticated", false)
-            window.localStorage.setItem("jwt", "")
-            window.location.href = "/"
+            logout(() => {
+              navigate("/")
+            })
           }}
         >
           <h2>Hello</h2>
