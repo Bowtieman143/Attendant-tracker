@@ -20,9 +20,6 @@ import axios from "axios"
 //   axios
 <<<<<<< HEAD
 //     .put(`https://sad-panini-3db68b.netlify.app//users/${id}`, data, {
-=======
-//     .put(`http://localhost:1337/users/${id}`, data, {
->>>>>>> a721c168367d9179162b0f6c86eef643c37ad193
 //       headers: {
 //         Authorization: `Bearer ${token}`,
 //       },
