@@ -1,17 +1,14 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { navigate } from "gatsby"
 import { isLoggedIn } from "../../services/auth"
 
 const PrivateRoute = ({ component: Component, location, ...rest }) => {
-  console.log("thsi is initiated")
-  console.log(isLoggedIn())
-
-  if (!isLoggedIn() && location.pathname !== `/app/login`) {
-    navigate("/login")
-    return null
-  }
-
-  console.log("You are logged in")
+  useEffect(() => {
+    if (!isLoggedIn() && location.pathname !== `/app/login`) {
+      navigate("/login")
+      return null
+    }
+  })
 
   return <Component {...rest} />
 }
