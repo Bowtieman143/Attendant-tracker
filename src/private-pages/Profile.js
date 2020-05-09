@@ -16,9 +16,8 @@ import axios from "axios"
 
 //   const token = localStorage.getItem("jwt")
 //   const data = { username, email }
-
+// This is causing an issur
 //   axios
-<<<<<<< HEAD
 //     .put(`https://sad-panini-3db68b.netlify.app//users/${id}`, data, {
 //       headers: {
 //         Authorization: `Bearer ${token}`,
