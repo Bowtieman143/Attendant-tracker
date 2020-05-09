@@ -1,14 +1,13 @@
 import React from "react"
 import { Router } from "@reach/router"
 import Profile from "../private-pages/Profile"
-import Login from "../private-pages/Login"
 import PrivateRoute from "../components/PrivateRoute"
 
 const Portal = () => {
   return (
     <Router basepath="/portal">
+      <PrivateRoute path="/" component={Profile} />
       <PrivateRoute path="/profile" component={Profile} />
-      <Login path="/login" />
     </Router>
   )
 }

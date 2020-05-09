@@ -18,7 +18,7 @@ import axios from "axios"
 //   const data = { username, email }
 
 //   axios
-//     .put(`http://localhost:1337/users/${id}`, data, {
+//     .put(`https://sad-panini-3db68b.netlify.app//users/${id}`, data, {
 //       headers: {
 //         Authorization: `Bearer ${token}`,
 //       },

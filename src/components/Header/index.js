@@ -27,7 +27,7 @@ const Header = () => {
               {isLoggedIn() ? (
                 <Nav.Link onClick={handleShow}>Logout</Nav.Link>
               ) : (
-                <Nav.Link href="/portal/login">Login</Nav.Link>
+                <Nav.Link href="/login">Login</Nav.Link>
               )}
             </Nav>
           </Navbar.Collapse>

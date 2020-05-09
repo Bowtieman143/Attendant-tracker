@@ -7,7 +7,7 @@ const PrivateRoute = ({ component: Component, location, ...rest }) => {
   console.log(isLoggedIn())
 
   if (!isLoggedIn() && location.pathname !== `/app/login`) {
-    navigate("/portal/login")
+    navigate("/login")
     return null
   }
 
