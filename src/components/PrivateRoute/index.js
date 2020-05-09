@@ -1,18 +1,17 @@
-import React, { useState, useEffect } from "react"
+import React from "react"
 import { navigate } from "gatsby"
+import { isLoggedIn } from "../../services/auth"
 
-const PrivateRoute = ({ component: Component, ...rest }) => {
-  const [isAuthenticated, setIsAuthenticated] = useState()
-  const [path, setPath] = useState()
+const PrivateRoute = ({ component: Component, location, ...rest }) => {
+  console.log("thsi is initiated")
+  console.log(isLoggedIn())
 
-  useEffect(() => {
-    setIsAuthenticated(JSON.parse(localStorage.getItem("isAuthenticated")))
-    if (!isAuthenticated && window.location.pathname !== `/login`) {
-      // If we’re not logged in, redirect to the home page.
-      navigate(`/portal/login`)
-      return null
-    }
-  }, [])
+  if (!isLoggedIn() && location.pathname !== `/app/login`) {
+    navigate("/portal/login")
+    return null
+  }
+
+  console.log("You are logged in")
 
   return <Component {...rest} />
 }

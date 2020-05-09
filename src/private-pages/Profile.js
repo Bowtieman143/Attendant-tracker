@@ -11,29 +11,29 @@ import Button from "react-bootstrap/Button"
 import Spinner from "react-bootstrap/Spinner"
 import axios from "axios"
 
-const handleSubmit = (id, email, username, setLoading) => {
-  setLoading(true)
+// const handleSubmit = (id, email, username, setLoading) => {
+//   setLoading(true)
 
-  const token = localStorage.getItem("jwt")
-  const data = { username, email }
+//   const token = localStorage.getItem("jwt")
+//   const data = { username, email }
 
-  axios
-    .put(`http://localhost:1337/users/${id}`, data, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    })
-    .then(response => {
-      const oldUserInformation = JSON.parse(localStorage.getItem("user"))
-      const newUserInformation = { ...oldUserInformation, username, email }
-      localStorage.setItem("user", JSON.stringify(newUserInformation))
-      setLoading(false)
-    })
-    .catch(error => {
-      setLoading(false)
-      return error
-    })
-}
+//   axios
+//     .put(`http://localhost:1337/users/${id}`, data, {
+//       headers: {
+//         Authorization: `Bearer ${token}`,
+//       },
+//     })
+//     .then(response => {
+//       const oldUserInformation = JSON.parse(localStorage.getItem("user"))
+//       const newUserInformation = { ...oldUserInformation, username, email }
+//       localStorage.setItem("user", JSON.stringify(newUserInformation))
+//       setLoading(false)
+//     })
+//     .catch(error => {
+//       setLoading(false)
+//       return error
+//     })
+// }
 
 const Profile = () => {
   const [username, setUsername] = useState("")
@@ -41,12 +41,12 @@ const Profile = () => {
   const [id, setId] = useState("")
   const [loading, setLoading] = useState(false)
 
-  useEffect(() => {
-    const user = JSON.parse(localStorage.getItem("user"))
-    setUsername(user.username)
-    setEmail(user.email)
-    setId(user.id)
-  }, [])
+  // useEffect(() => {
+  //   const user = JSON.parse(localStorage.getItem("user"))
+  //   setUsername(user.username)
+  //   setEmail(user.email)
+  //   setId(user.id)
+  // }, [])
 
   return (
     <Layout>
@@ -79,7 +79,7 @@ const Profile = () => {
               <Form
                 onSubmit={e => {
                   e.preventDefault()
-                  handleSubmit(id, email, username, setLoading)
+                  // handleSubmit(id, email, username, setLoading)
                 }}
               >
                 <Form.Group controlId="formUsername">
