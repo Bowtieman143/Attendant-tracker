@@ -5,11 +5,12 @@ import { isLoggedIn } from "../../services/auth"
 const PrivateRoute = ({ component: Component, location, ...rest }) => {
   console.log("thsi is initiated")
   console.log(isLoggedIn())
-
-  if (!isLoggedIn() && location.pathname !== `/login`) {
-    navigate("/login")
-    return null
-  }
+  useEffect(() => {
+    if (!isLoggedIn() && location.pathname !== `/login`) {
+      navigate("/login")
+      return null
+    }
+  })
 
   console.log("You are logged in")
 
