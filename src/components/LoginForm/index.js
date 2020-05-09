@@ -7,6 +7,7 @@ import { isLoggedIn, handleLogin } from "../../services/auth"
 
 const handleSubmit = (username, password) => {
   return handleLogin({ username, password })
+<<<<<<< HEAD
 
   // const data = {
   //   identifier: username,
@@ -36,6 +37,18 @@ const LoginForm = () => {
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
 
+=======
+}
+
+const LoginForm = () => {
+  if (isLoggedIn()) {
+    navigate(`/portal/profile`)
+  }
+
+  const [username, setUsername] = useState("")
+  const [password, setPassword] = useState("")
+
+>>>>>>> a721c168367d9179162b0f6c86eef643c37ad193
   return (
     <Fragment>
       <h2>Login</h2>
