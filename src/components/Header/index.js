@@ -36,11 +36,7 @@ const Header = () => {
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton></Modal.Header>
         <Modal.Body>
-          {isLoggedIn() ? (
-            <LogoutForm successRedirect="/" />
-          ) : (
-            <LoginForm desiredRoute="/portal/profile" />
-          )}
+          {isLoggedIn() && <LogoutForm successRedirect="/" />}
         </Modal.Body>
       </Modal>
     </Fragment>

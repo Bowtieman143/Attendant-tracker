@@ -3,12 +3,15 @@ import { navigate } from "gatsby"
 import { isLoggedIn } from "../../services/auth"
 
 const PrivateRoute = ({ component: Component, location, ...rest }) => {
-  useEffect(() => {
-    if (!isLoggedIn() && location.pathname !== `/app/login`) {
-      navigate("/login")
-      return null
-    }
-  })
+  console.log("thsi is initiated")
+  console.log(isLoggedIn())
+
+  if (!isLoggedIn() && location.pathname !== `/login`) {
+    navigate("/login")
+    return null
+  }
+
+  console.log("You are logged in")
 
   return <Component {...rest} />
 }
