@@ -27,7 +27,7 @@ const Header = () => {
               {isLoggedIn() ? (
                 <Nav.Link onClick={handleShow}>Logout</Nav.Link>
               ) : (
-                <Nav.Link href="/portal/login">Login</Nav.Link>
+                <Nav.Link href="/login">Login</Nav.Link>
               )}
             </Nav>
           </Navbar.Collapse>
@@ -36,11 +36,7 @@ const Header = () => {
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton></Modal.Header>
         <Modal.Body>
-          {isLoggedIn() ? (
-            <LogoutForm successRedirect="/" />
-          ) : (
-            <LoginForm desiredRoute="/portal/profile" />
-          )}
+          {isLoggedIn() && <LogoutForm successRedirect="/" />}
         </Modal.Body>
       </Modal>
     </Fragment>

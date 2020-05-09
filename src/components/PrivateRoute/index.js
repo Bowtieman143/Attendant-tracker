@@ -6,8 +6,8 @@ const PrivateRoute = ({ component: Component, location, ...rest }) => {
   console.log("thsi is initiated")
   console.log(isLoggedIn())
 
-  if (!isLoggedIn() && location.pathname !== `/app/login`) {
-    navigate("/portal/login")
+  if (!isLoggedIn() && location.pathname !== `/login`) {
+    navigate("/login")
     return null
   }
 
