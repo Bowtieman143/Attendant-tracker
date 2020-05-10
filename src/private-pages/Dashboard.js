@@ -1,17 +1,20 @@
 import React from "react"
 import Layout from "../components/Layout"
-import LoginForm from "../components/LoginForm"
 import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
+import Sidebar from "../components/Sidebar"
 
-const Login = () => {
+const Dashboard = () => {
   return (
     <Layout>
-      <Container>
+      <Container fluid>
         <Row>
-          <Col>
-            <LoginForm />
+          <Col md={2}>
+            <Sidebar />
+          </Col>
+          <Col md={10}>
+            <h2>dfjdkss</h2>
           </Col>
         </Row>
       </Container>
@@ -19,4 +22,4 @@ const Login = () => {
   )
 }
 
-export default Login
+export default Dashboard
