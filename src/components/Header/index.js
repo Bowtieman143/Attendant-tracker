@@ -1,10 +1,10 @@
 import React, { Fragment, useState, useEffect } from "react"
 import Nav from "react-bootstrap/Nav"
 import Navbar from "react-bootstrap/Navbar"
+import NavDropdown from "react-bootstrap/NavDropdown"
 import Modal from "react-bootstrap/Modal"
 import Container from "react-bootstrap/Container"
 
-import LoginForm from "../LoginForm"
 import LogoutForm from "../LogoutForm"
 import { isLoggedIn } from "../../services/auth"
 
@@ -25,7 +25,17 @@ const Header = () => {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ml-auto">
               {isLoggedIn() ? (
-                <Nav.Link onClick={handleShow}>Logout</Nav.Link>
+                <Fragment>
+                  <NavDropdown title="Portal" id="basic-nav-dropdown">
+                    <NavDropdown.Item href="/portal/profile">
+                      Profile
+                    </NavDropdown.Item>
+                    <NavDropdown.Item href="/portal/dashboard">
+                      Dashboard
+                    </NavDropdown.Item>
+                  </NavDropdown>
+                  <Nav.Link onClick={handleShow}>Logout</Nav.Link>
+                </Fragment>
               ) : (
                 <Nav.Link href="/login">Login</Nav.Link>
               )}

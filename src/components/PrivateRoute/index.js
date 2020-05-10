@@ -1,5 +1,5 @@
 import React, { useEffect } from "react"
-import { navigate } from "@reach/router"
+import { navigate } from "gatsby"
 import { isLoggedIn } from "../../services/auth"
 
 const PrivateRoute = ({ component: Component, location, ...rest }) => {
