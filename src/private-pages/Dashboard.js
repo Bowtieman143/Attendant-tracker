@@ -84,7 +84,7 @@ const Dashboard = () => {
                     </div>
                   </Col>
                   <Col md={4} className="text-center">
-                    <Accordion defaultActiveKey={windowWidth > 400 ? "0" : "1"}>
+                    <Accordion defaultActiveKey="1" className="mb-3">
                       <Card>
                         <Card.Header>
                           <Accordion.Toggle
